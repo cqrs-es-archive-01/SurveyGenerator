@@ -1,13 +1,17 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.21005.1
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SurveyGenerator.Data", "SurveyGenerator.Data\SurveyGenerator.Data.csproj", "{FF43D7C6-0BF7-41AB-A988-528D3FC2E387}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SurveyGenerator.Core", "SurveyGenerator.Core\SurveyGenerator.Core.csproj", "{7B2054F6-ABB8-44DD-80B6-13A742A54D7F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleMvcApp", "SimpleMvcApp\SimpleMvcApp.csproj", "{50FBB9DA-D7BD-4CCA-8A99-E56DF199155E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SurveyGenerator.Common", "SurveyGenerator.Common\SurveyGenerator.Common.csproj", "{C745EBC9-4FA4-4A0C-9A49-ADDBEC83A0A5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SurveyGenerator.Service", "SurveyGeneratorService\SurveyGenerator.Service.csproj", "{ACCBDF7C-3574-41C8-8DF7-5501E2AEB024}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SurveyGenerator.Service.Test", "SurveyGenerator.Service.Test\SurveyGenerator.Service.Test.csproj", "{3EEF2239-AEF3-434E-ACFA-B0C0ADF4EF5D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +27,18 @@ Global
 		{7B2054F6-ABB8-44DD-80B6-13A742A54D7F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7B2054F6-ABB8-44DD-80B6-13A742A54D7F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7B2054F6-ABB8-44DD-80B6-13A742A54D7F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{50FBB9DA-D7BD-4CCA-8A99-E56DF199155E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{50FBB9DA-D7BD-4CCA-8A99-E56DF199155E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{50FBB9DA-D7BD-4CCA-8A99-E56DF199155E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{50FBB9DA-D7BD-4CCA-8A99-E56DF199155E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C745EBC9-4FA4-4A0C-9A49-ADDBEC83A0A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C745EBC9-4FA4-4A0C-9A49-ADDBEC83A0A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C745EBC9-4FA4-4A0C-9A49-ADDBEC83A0A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C745EBC9-4FA4-4A0C-9A49-ADDBEC83A0A5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ACCBDF7C-3574-41C8-8DF7-5501E2AEB024}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ACCBDF7C-3574-41C8-8DF7-5501E2AEB024}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ACCBDF7C-3574-41C8-8DF7-5501E2AEB024}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ACCBDF7C-3574-41C8-8DF7-5501E2AEB024}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3EEF2239-AEF3-434E-ACFA-B0C0ADF4EF5D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3EEF2239-AEF3-434E-ACFA-B0C0ADF4EF5D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3EEF2239-AEF3-434E-ACFA-B0C0ADF4EF5D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3EEF2239-AEF3-434E-ACFA-B0C0ADF4EF5D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

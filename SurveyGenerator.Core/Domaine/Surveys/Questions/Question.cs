@@ -23,9 +23,12 @@ namespace SurveyGenerator.Core.Domaine.Surveys.Questions
         public Guid? ParentId { get; set; }
         public virtual Question ParentQuestion { get; set; }
         public virtual ICollection<QuestionOption> Options { get; set; }
-        public virtual ICollection<Question> Questions { get; set; }
+        public virtual ICollection<ResponseItem> ResponseItems { get; set; }
+
         public Guid SurveyId { get; set; }
         public virtual Survey Survey { get; set; }
+
+        public virtual ICollection<Question> Questions { get; set; }
 
         public Guid UserId { get; set; }
         public virtual User User { get; set; }

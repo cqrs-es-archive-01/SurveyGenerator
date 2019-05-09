@@ -12,14 +12,17 @@ namespace SurveyGenerator.Data.Mapping.Surveys.Responses
         {
             ToTable("RESPONSES_ITEMS");
 
-            HasKey(a => a.Id);
             Property(a => a.CreatedOn).IsRequired();
             Property(a => a.ResponseValue).HasMaxLength(500);
-            Property(a => a.Timestamp).IsRowVersion();
 
             HasRequired(a => a.Response)
                 .WithMany(a => a.ResponseItems)
                 .HasForeignKey(a => a.ResponseId);
+
+            HasRequired(a => a.Question)
+                .WithMany(a => a.ResponseItems)
+                .HasForeignKey(a => a.QuestionId)
+                .WillCascadeOnDelete(false);
         }
     }
 }

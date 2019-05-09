@@ -12,18 +12,16 @@ namespace SurveyGenerator.Data.Mapping.Surveys
         {
             ToTable("SURVEYS");
 
-            HasKey(a => a.Id);
             Property(a => a.CreatedOn).IsRequired();
-            Property(a => a.Description).HasMaxLength(250);
             Property(a => a.Footer).HasMaxLength(500);
             Property(a => a.Header).HasMaxLength(500);
-            Property(a => a.Timestamp).IsRowVersion();
-            Property(a => a.Title).HasMaxLength(150).IsRequired();
+            Property(a => a.Title).IsRequired();
             Property(a => a.Type).IsRequired();
 
             HasRequired(a => a.User)
                 .WithMany(a => a.Surveys)
-                .HasForeignKey(a => a.UserId);
+                .HasForeignKey(a => a.UserId)
+                .WillCascadeOnDelete(false);
 
 
         }

@@ -47,10 +47,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Conventions\ConvetionRules.cs" />
+    <Compile Include="Conventions\KeyProperties.cs" />
+    <Compile Include="Conventions\StringProperties.cs" />
+    <Compile Include="Conventions\TimeStampProperties.cs" />
     <Compile Include="Data\GenericRepository.cs" />
-    <Compile Include="Mapping\Features\FeatureMap.cs" />
-    <Compile Include="Mapping\Features\PermissionFeatureMap.cs" />
-    <Compile Include="Mapping\IMappingConfiguration.cs" />
+    <Compile Include="Mapping\Routes\PermissionRouteMap.cs" />
+    <Compile Include="Mapping\Routes\RouteMap.cs" />
     <Compile Include="Mapping\SurveyEntityTypeConfiguration.cs" />
     <Compile Include="Mapping\Surveys\Questions\QuestionMapping.cs" />
     <Compile Include="Mapping\Surveys\Questions\QuestionOptionMapping.cs" />
@@ -60,10 +63,21 @@
     <Compile Include="Mapping\Surveys\SurveyMapping.cs" />
     <Compile Include="Mapping\Users\PermissionMap.cs" />
     <Compile Include="Mapping\Users\UserMap.cs" />
-    <Compile Include="Mapping\Users\UserPermissionMap.cs" />
-    <Compile Include="Migrations\201901152331285_init-database.cs" />
-    <Compile Include="Migrations\201901152331285_init-database.Designer.cs">
-      <DependentUpon>201901152331285_init-database.cs</DependentUpon>
+    <Compile Include="Migrations\201905091106210_init project.cs" />
+    <Compile Include="Migrations\201905091106210_init project.Designer.cs">
+      <DependentUpon>201905091106210_init project.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905091113270_turn features into routes.cs" />
+    <Compile Include="Migrations\201905091113270_turn features into routes.Designer.cs">
+      <DependentUpon>201905091113270_turn features into routes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905091129463_add CUD procedures for USER.cs" />
+    <Compile Include="Migrations\201905091129463_add CUD procedures for USER.Designer.cs">
+      <DependentUpon>201905091129463_add CUD procedures for USER.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905091225123_add deletion flags for User.cs" />
+    <Compile Include="Migrations\201905091225123_add deletion flags for User.Designer.cs">
+      <DependentUpon>201905091225123_add deletion flags for User.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -81,8 +95,17 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201901152331285_init-database.resx">
-      <DependentUpon>201901152331285_init-database.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201905091106210_init project.resx">
+      <DependentUpon>201905091106210_init project.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905091113270_turn features into routes.resx">
+      <DependentUpon>201905091113270_turn features into routes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905091129463_add CUD procedures for USER.resx">
+      <DependentUpon>201905091129463_add CUD procedures for USER.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905091225123_add deletion flags for User.resx">
+      <DependentUpon>201905091225123_add deletion flags for User.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

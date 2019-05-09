@@ -13,7 +13,6 @@ namespace SurveyGenerator.Data.Mapping.Surveys.Responses
             ToTable("RESPONSE_OPTIONS");
 
             HasKey(a => new { a.ResponseItemId, a.QuestionOptionId });
-            Property(a => a.Timestamp).IsRowVersion();
             Property(a => a.Other).IsRequired();
 
             HasRequired(a => a.QuestionOption)

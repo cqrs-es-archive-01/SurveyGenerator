@@ -74,7 +74,8 @@ namespace SurveyGenerator.Core
         /// <returns>true if the string is a valid IpAddress and false if it's not</returns>
         public static bool IsValidIpAddress(string ipAddress)
         {
-            return IPAddress.TryParse(ipAddress, out IPAddress _);
+            IPAddress IpAdress ;
+            return IPAddress.TryParse(ipAddress, out IpAdress);
         }
 
         /// <summary>

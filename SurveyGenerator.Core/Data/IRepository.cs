@@ -1,4 +1,5 @@
 ﻿using SurveyGenerator.Core.Domaine;
+using SurveyGenerator.Core.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,6 +17,8 @@ namespace SurveyGenerator.Core.Data
         void Delete(TEntity entity);
         void Delete(IEnumerable<TEntity> entities);
         IEnumerable<TEntity> All();
+        IPagedList<TEntity> All(int pageIndex, int pageSize, params Expression<Func<TEntity, object>>[] includeProperties);
+
         IEnumerable<TEntity> AllInclude(params Expression<Func<TEntity, object>>[] includeProperties);
         IEnumerable<TEntity> FindByInclude(Expression<Func<TEntity, bool>> predicate, params Expression<Func<TEntity, object>>[] includeProperties);
         IEnumerable<TEntity> FindBy(Expression<Func<TEntity, bool>> predicate);

@@ -12,13 +12,8 @@ namespace SurveyGenerator.Data.Mapping.Surveys.Questions
         {
             this.ToTable("QUESTION_OPTIONS");
 
-            this.HasKey(a => a.Id);
-            this.Property(a => a.Timestamp).IsRowVersion();
             this.Property(a => a.Order).IsRequired();
-            this.Property(a => a.Url).HasMaxLength(250);
             this.Property(a => a.CreatedOn).IsRequired();
-            this.Property(a => a.Description).HasMaxLength(250);
-            this.Property(a => a.Label).HasMaxLength(150);
 
         }
      

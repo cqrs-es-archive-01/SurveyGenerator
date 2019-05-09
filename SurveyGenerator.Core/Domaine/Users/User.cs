@@ -14,10 +14,16 @@ namespace SurveyGenerator.Core.Domaine.Users
         public String Email { get; set; }
         public string AccessLogin { get; set; }
 
-        public virtual ICollection<UserPermission> UserPermissions { get; set; }
+        public bool Deleted { get; set; }
+        public DateTime? DeletedOn { get; set; }
+
+
+
         public virtual ICollection<Survey> Surveys { get; set; }
         public virtual ICollection<Response> Responses { get; set; }
         public virtual ICollection<Question> Questions { get; set; }
+        public virtual ICollection<Permission> Permissions { get; set; }
+
 
     }
 }

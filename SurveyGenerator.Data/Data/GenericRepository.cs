@@ -1,5 +1,6 @@
 ﻿using SurveyGenerator.Core.Data;
 using SurveyGenerator.Core.Domaine;
+using SurveyGenerator.Core.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -24,9 +25,9 @@ namespace SurveyGenerator.Data.Data
         protected string GetFullErrorTextAndRollbackEntityChanges(DbUpdateException exception)
         {
             //rollback entity changes
-            if (_context is DbContext dbContext)
+            if (_context is DbContext )
             {
-                var entries = dbContext.ChangeTracker.Entries()
+                var entries = _context.ChangeTracker.Entries()
                     .Where(e => e.State == EntityState.Added || e.State == EntityState.Modified).ToList();
 
                 entries.ForEach(entry => entry.State = EntityState.Unchanged);
@@ -130,6 +131,15 @@ namespace SurveyGenerator.Data.Data
         {
             return Entities.AsNoTracking().ToList();
         }
+        public virtual IPagedList<TEntity> All(int pageIndex, int pageSize, params Expression<Func<TEntity, object>>[] includeProperties)
+        {
+            var query = GetAllIncluding(includeProperties);
+            var entities = new PagedList<TEntity>(query, pageIndex, pageSize);
+
+            return entities;
+        }
+
+
 
         public IEnumerable<TEntity> AllInclude(params Expression<Func<TEntity, object>>[] includeProperties)
         {

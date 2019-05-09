@@ -1,15 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{7B2054F6-ABB8-44DD-80B6-13A742A54D7F}</ProjectGuid>
+    <ProjectGuid>{ACCBDF7C-3574-41C8-8DF7-5501E2AEB024}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>SurveyGenerator.Core</RootNamespace>
-    <AssemblyName>SurveyGenerator.Core</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <RootNamespace>SurveyGenerator.Service</RootNamespace>
+    <AssemblyName>SurveyGenerator.Service</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -40,27 +40,26 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CommonHelper.cs" />
-    <Compile Include="Data\IRepository.cs" />
-    <Compile Include="Domaine\BaseEntity.cs" />
-    <Compile Include="Domaine\Routes\PermissionRoute.cs" />
-    <Compile Include="Domaine\Routes\Route.cs" />
-    <Compile Include="Domaine\Surveys\Questions\Question.cs" />
-    <Compile Include="Domaine\Surveys\Questions\QuestionOption.cs" />
-    <Compile Include="Domaine\Surveys\Questions\QuestionTypes.cs" />
-    <Compile Include="Domaine\Surveys\Responses\Response.cs" />
-    <Compile Include="Domaine\Surveys\Responses\ResponseItem.cs" />
-    <Compile Include="Domaine\Surveys\Responses\ResponseOption.cs" />
-    <Compile Include="Domaine\Surveys\Survey.cs" />
-    <Compile Include="Domaine\Surveys\SurveyTypes.cs" />
-    <Compile Include="Domaine\Users\Permission.cs" />
-    <Compile Include="Domaine\Users\PermissionTypes.cs" />
-    <Compile Include="Domaine\Users\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SurveyGeneratorVersion.cs" />
-    <Compile Include="Utilities\IPagedList.cs" />
-    <Compile Include="Utilities\PagedList.cs" />
-    <Compile Include="Utilities\SurveyGeneratorException.cs" />
+    <Compile Include="Users\IUserService.cs" />
+    <Compile Include="Users\UserService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SurveyGenerator.Core\SurveyGenerator.Core.csproj">
+      <Project>{7b2054f6-abb8-44dd-80b6-13a742a54d7f}</Project>
+      <Name>SurveyGenerator.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SurveyGenerator.Data\SurveyGenerator.Data.csproj">
+      <Project>{ff43d7c6-0bf7-41ab-a988-528d3fc2e387}</Project>
+      <Name>SurveyGenerator.Data</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
 </Project>

@@ -5,7 +5,7 @@ namespace SurveyGenerator.Data.Migrations
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<SurveyGeneratorContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<SurveyGenerator.Data.SurveyGeneratorContext>
     {
         public Configuration()
         {
