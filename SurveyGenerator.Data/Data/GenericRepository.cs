@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
+using System.Data.Entity.Validation;
 using System.Linq;
 using System.Linq.Expressions;
 
@@ -52,11 +53,22 @@ namespace SurveyGenerator.Data.Data
                 Entities.Add(entity);
                 _context.SaveChanges();
             }
+            catch (DbEntityValidationException dbEx)
+            {
+                foreach (var validationErrors in dbEx.EntityValidationErrors)
+                {
+                    foreach (var validationError in validationErrors.ValidationErrors)
+                    {
+                        System.Console.WriteLine("Property: {0} Error: {1}", validationError.PropertyName, validationError.ErrorMessage);
+                    }
+                }
+            }
             catch (DbUpdateException exception)
             {
                 //ensure that the detailed error text is saved in the Log
                 throw new Exception(GetFullErrorTextAndRollbackEntityChanges(exception), exception);
             }
+
         }
 
         public virtual void Insert(IEnumerable<TEntity> entities)
@@ -105,6 +117,10 @@ namespace SurveyGenerator.Data.Data
 
             try
             {
+                foreach (var entity in entities)
+                {
+                    Entities.Attach(entity);
+                }
                 Entities.RemoveRange(entities);
                 _context.SaveChanges();
             }

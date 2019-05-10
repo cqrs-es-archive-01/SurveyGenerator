@@ -1,6 +1,7 @@
 ﻿using SurveyGenerator.Core.Domaine.Users;
 using SurveyGenerator.Core.Utilities;
 using System;
+using System.Collections.Generic;
 
 namespace SurveyGenerator.Service.Users
 {
@@ -10,7 +11,7 @@ namespace SurveyGenerator.Service.Users
   
         void DeleteUser(User user);
   
-        IPagedList<User> GetAllUsers(int pageIndex, int pageSize, bool deleted = false);
+        IEnumerable<User> GetAllUsers();
        
         void InsertUser(User user);
       

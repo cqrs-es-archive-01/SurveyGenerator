@@ -38,9 +38,9 @@ namespace SurveyGenerator.Service.Users
             UpdateUser(user);
         }
 
-        public IPagedList<User> GetAllUsers(int pageIndex, int pageSize, bool deleted = false)
+        public IEnumerable<User> GetAllUsers()
         {
-            var users = _userRepository.All(pageIndex, pageSize, (a) => a.Deleted != deleted);
+            var users = _userRepository.All();
             return users;
         }
 

@@ -52,6 +52,7 @@
     <Compile Include="Conventions\StringProperties.cs" />
     <Compile Include="Conventions\TimeStampProperties.cs" />
     <Compile Include="Data\GenericRepository.cs" />
+    <Compile Include="Data\Users\UserData.cs" />
     <Compile Include="Mapping\Routes\PermissionRouteMap.cs" />
     <Compile Include="Mapping\Routes\RouteMap.cs" />
     <Compile Include="Mapping\SurveyEntityTypeConfiguration.cs" />
